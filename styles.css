@@ -132,6 +132,13 @@ footer {
     font-size: 0.9rem;
 }
 
+.circle-image {
+    width: 300px; /* Adjust the size as needed */
+    height: 300px; /* Must be the same as width to maintain circular shape */
+    border-radius: 50%; /* This creates the circle */
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {

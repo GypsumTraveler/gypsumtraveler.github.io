@@ -161,3 +161,22 @@ footer {
         text-align: center;
     }
 }
+@media (max-width: 768px) {
+    .circle-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .circle-image {
+        width: 200px;  /* Smaller size for mobile */
+        height: 200px;
+    }
+}
+
+/* Ensure the hero section can accommodate stacked images */
+.hero {
+    min-height: 100vh;
+    padding: 80px 20px;  /* Added top padding to account for fixed header */
+    overflow: hidden;
+}

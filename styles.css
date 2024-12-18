@@ -139,6 +139,12 @@ footer {
     object-fit: cover; /* Ensures the image covers the entire container without distortion */
 }
 
+.hero .circle-images {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    gap: 10px; /* Optional: space between the images */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {

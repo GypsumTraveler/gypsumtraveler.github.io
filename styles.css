@@ -1,14 +1,4 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}/* General Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,120 +6,126 @@ body {
 }
 
 body {
-    font-family: 'Courier New', monospace;
-    background-color: #f4f4f4;
+    font-family: 'Courier new', monospace;
+    background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
-}
-
-/* Navigation */
-header {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-bottom: 1px solid #eaeaea;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-}
-
-.burger-menu {
-    display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
+    padding: 20px;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #fafafa;
-    padding: 20px;
     text-align: center;
+    padding: 75px 0;
+    background-color: #fff;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    margin: 20px 0;
     font-size: 1.2rem;
+    color: #555;
 }
 
-.cta-button {
-    text-decoration: none;
-    padding: 10px 30px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #555;
-}
-
-/* Content Section */
-.content {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    background-color: #fff;
-    margin-top: -40px;
-}
-
-.content-box {
-    max-width: 300px;
+/* About Section */
+.about {
+    padding: 60px 0;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.content-box h2 {
+.about h2 {
+    font-size: 1.75rem;
     margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #333;
 }
 
-.content-box p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Footer */
-footer {
+/* Skills Section */
+.skills {
+    padding: 60px 0;
+    background-color: #fff;
     text-align: center;
+}
+
+.skills h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Projects Section */
+.projects {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: #fff;
     padding: 20px;
-    background-color: #fafafa;
-    border-top: 1px solid #eaeaea;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-info a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #007BFF;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .circle-image {
@@ -139,44 +135,51 @@ footer {
     object-fit: cover; /* Ensures the image covers the entire container without distortion */
 }
 
-.hero .circle-images {
+/* Gallery Section */
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
     display: flex;
-    justify-content: center; /* Center the images horizontally */
-    gap: 10px; /* Optional: space between the images */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+    gap: 20px;
 }
 
-/* Responsive Design */
+.gallery-item {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust width as needed */
+    scroll-snap-align: start;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Hide scrollbar in WebKit browsers */
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure the container fills the screen width and handles overflow */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
+    .gallery-item {
+        width: 250px; /* Adjust width for smaller screens */
     }
-
-    .burger-menu {
-        display: block;
-    }
-
-    .content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-@media (max-width: 768px) {
-    .circle-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .circle-image {
-        width: 200px;  /* Smaller size for mobile */
-        height: 200px;
-    }
-}
-
-/* Ensure the hero section can accommodate stacked images */
-.hero {
-    min-height: 100vh;
-    padding: 80px 20px;  /* Added top padding to account for fixed header */
-    overflow: hidden;
 }
